@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/opt/kim_api/install/include/kim-api",
+                "${default}"
+            ],
+            "defines": [],
+            "compilerPath": "/opt/llvm_12/clang_12_prebuilt/bin/clang++",
+            "cStandard": "c17",
+            "intelliSenseMode": "linux-clang-x64",
+            "cppStandard": "c++98"
+        }
+    ],
+    "version": 4
+}
