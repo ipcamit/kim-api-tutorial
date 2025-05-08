@@ -572,3 +572,8 @@ int LennardJones612::Compute(
 
     return 0; // Indicate successful computation
 }
+
+/*
+Not covered by this code but important:
+Logging
+*/
