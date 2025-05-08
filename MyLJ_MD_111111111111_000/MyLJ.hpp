@@ -1,7 +1,7 @@
 #ifndef LJ_HPP_ 
 #define LJ_HPP_ 
 
-#include "./kim-api/KIM_ModelDriverHeaders.hpp"
+#include "KIM_ModelDriverHeaders.hpp"
 
 extern "C" { // treat this function like a C function
 int model_driver_create(KIM::ModelDriverCreate * const modelDriverCreate,
@@ -30,21 +30,23 @@ class LennardJones612
   // an implicit this pointer added to the prototype by the C++ compiler
   // static = @classmethod, remove "self" for C compatibility
   static int Destroy(KIM::ModelDestroy * const modelDestroy);
+
   static int Refresh(KIM::ModelRefresh * const modelRefresh);
+  
   static int
   Compute(KIM::ModelCompute const * const modelCompute,
           KIM::ModelComputeArguments const * const modelComputeArguments); // <- main code goes here
+  
   static int ComputeArgumentsCreate(
       KIM::ModelCompute const * const modelCompute,
       KIM::ModelComputeArgumentsCreate * const modelComputeArgumentsCreate); // <- what this model can provide
+  
   static int ComputeArgumentsDestroy(
       KIM::ModelCompute const * const modelCompute,
       KIM::ModelComputeArgumentsDestroy * const modelComputeArgumentsDestroy);
-  private:
+  
   std::string species;
   double cutoff, sigma, epsilon;
-  int compute_arguments_create(
-      KIM::ModelComputeArgumentsCreate * const modelComputeArgumentsCreate);
 };
 
 #endif  // LJ_HPP_
